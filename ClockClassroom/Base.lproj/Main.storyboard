@@ -1,26 +1,144 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l3C-rP-HPo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tabbar Controller-->
+        <scene sceneID="Jqa-Sq-l3C">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="l3C-rP-HPo" customClass="YYPTabbarController" customModule="ClockClassroom" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="I7h-yE-pvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SnM-Mf-wan" kind="relationship" relationship="viewControllers" id="TOg-TL-EFZ"/>
+                        <segue destination="5rK-58-Ert" kind="relationship" relationship="viewControllers" id="pus-qw-X92"/>
+                        <segue destination="WdM-x0-iId" kind="relationship" relationship="viewControllers" id="Xth-ag-ygo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML9-BJ-Ecw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="-641"/>
+        </scene>
+        <!--订课室-->
+        <scene sceneID="4Up-zH-teB">
+            <objects>
+                <navigationController id="SnM-Mf-wan" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="订课室" image="orderClass_tabbar_deselect" selectedImage="orderClass_tabbar_select" id="3ns-h6-5Dg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Isz-Ba-7gZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FWB-iK-5lz" kind="relationship" relationship="rootViewController" id="Yh7-RJ-GxS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iF5-z0-gye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="53"/>
+        </scene>
+        <!--主题-->
+        <scene sceneID="Acg-2D-C0v">
+            <objects>
+                <navigationController id="5rK-58-Ert" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="主题" id="1dV-f2-WXt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Png-os-j3M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Seu-Fu-hqF" kind="relationship" relationship="rootViewController" id="IjW-pD-ifG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WU-mv-lZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="53"/>
+        </scene>
+        <!--体验课-->
+        <scene sceneID="JtD-XV-PCZ">
+            <objects>
+                <navigationController id="WdM-x0-iId" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="体验课" id="VOm-xy-0cy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7dM-Xb-dCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xDP-Pz-5zj" kind="relationship" relationship="rootViewController" id="7dP-Hq-kcW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yg-3v-p2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="53"/>
+        </scene>
+        <!--Order ClassVC-->
+        <scene sceneID="Wi8-9S-gFM">
+            <objects>
+                <viewController id="FWB-iK-5lz" customClass="YYPOrderClassVC" customModule="ClockClassroom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="akQ-cz-fEa"/>
+                        <viewControllerLayoutGuide type="bottom" id="UV3-5L-Pld"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="6RP-fk-f3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ywe-64-dMK"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQa-Xd-Ghn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-511" y="732"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="P8R-jM-cy7">
+            <objects>
+                <viewController id="Seu-Fu-hqF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v2Y-wy-vSu"/>
+                        <viewControllerLayoutGuide type="bottom" id="59d-Bt-tQa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wkV-xz-dgk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ful-RE-gad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebD-2F-Cct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281" y="742"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uTd-sz-5Sv">
+            <objects>
+                <viewController id="xDP-Pz-5zj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cur-9d-d3E"/>
+                        <viewControllerLayoutGuide type="bottom" id="njX-Ho-OnN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ibj-vd-HKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zoP-Vq-IhR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax1-zm-hg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="749"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="orderClass_tabbar_deselect" width="25" height="25"/>
+        <image name="orderClass_tabbar_select" width="25" height="25"/>
+    </resources>
 </document>
