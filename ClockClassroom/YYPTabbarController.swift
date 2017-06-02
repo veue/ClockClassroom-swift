@@ -21,7 +21,6 @@ class YYPTabbarController: UITabBarController {
         item2?.image = UIImage.init(named: "theme_tabbar_deselect")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         item2?.selectedImage = UIImage.init(named: "theme_tabbar_select")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-
         let item3 = self.tabBar.items?[2]
         item3?.image = UIImage.init(named: "experienceCourse_tabbar_deselect")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         item3?.selectedImage = UIImage.init(named: "experienceCourse_tabbar_select")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
