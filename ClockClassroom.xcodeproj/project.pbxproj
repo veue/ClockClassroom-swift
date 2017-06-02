@@ -246,6 +246,7 @@
 				TargetAttributes = {
 					20597E241EDFF8F3003C7155 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Z2NND3M7WA;
 						ProvisioningStyle = Automatic;
 					};
 					20597E381EDFF8F3003C7155 = {
@@ -519,6 +520,7 @@
 			baseConfigurationReference = 41DAC7FDE5B9188A62D5D879 /* Pods-ClockClassroom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z2NND3M7WA;
 				INFOPLIST_FILE = ClockClassroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,6 +535,7 @@
 			baseConfigurationReference = 1335A6EBA7C8F1EBB3684792 /* Pods-ClockClassroom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z2NND3M7WA;
 				INFOPLIST_FILE = ClockClassroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
