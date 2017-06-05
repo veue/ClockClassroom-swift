@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     let tableView = UITableView()
-
+    var schoolArray = Array<Any>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +22,22 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        
+        let urlString = "\(JavaUrl)/dubboServiceConsumer/v2.6/school/findSchool.action"
+        let dict = ["is_ios":"1","is_test":"1"]
+        
+        YYPRequestManager.sharedInstance.postRequest(urlString: urlString, parameters:dict, success: { (result) in
+//            print("------------\(result)")
+            let schools = result["obj"]?["flagship"]
+            self.schoolArray =  Mapper<SchoolModel>().mapArray(JSONArray: schools as! [[String : Any]])!
+            
+            let model = self.schoolArray[0] as! SchoolModel
+            
+            print(model.address as Any)
+            
+        }) { (Error) in
+            print("====\(Error)")
+        }
     }
     
     

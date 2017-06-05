@@ -17,6 +17,7 @@
 		20597E5C1EE00058003C7155 /* YYPTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20597E5B1EE00058003C7155 /* YYPTabbarController.swift */; };
 		206D67661EE10198004CFA50 /* YYPUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D67651EE10198004CFA50 /* YYPUtils.swift */; };
 		206D67691EE139CC004CFA50 /* YYPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D67681EE139CC004CFA50 /* YYPRequestManager.swift */; };
+		20BE731E1EE52B8E008D92C5 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BE731D1EE52B8E008D92C5 /* SchoolModel.swift */; };
 		3A381B7BF7494E216EBBE207 /* Pods_ClockClassroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980C4C474D6BFE7D00F3CA0F /* Pods_ClockClassroom.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		20597E5B1EE00058003C7155 /* YYPTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPTabbarController.swift; sourceTree = "<group>"; };
 		206D67651EE10198004CFA50 /* YYPUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPUtils.swift; sourceTree = "<group>"; };
 		206D67681EE139CC004CFA50 /* YYPRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPRequestManager.swift; sourceTree = "<group>"; };
+		20BE731D1EE52B8E008D92C5 /* SchoolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		41DAC7FDE5B9188A62D5D879 /* Pods-ClockClassroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClockClassroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClockClassroom/Pods-ClockClassroom.debug.xcconfig"; sourceTree = "<group>"; };
 		980C4C474D6BFE7D00F3CA0F /* Pods_ClockClassroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClockClassroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		20597E271EDFF8F3003C7155 /* ClockClassroom */ = {
 			isa = PBXGroup;
 			children = (
+				20BE731C1EE52B32008D92C5 /* Model */,
 				20597E561EDFFD99003C7155 /* OrderClass */,
 				20597E281EDFF8F3003C7155 /* AppDelegate.swift */,
 				20597E5B1EE00058003C7155 /* YYPTabbarController.swift */,
@@ -155,6 +158,14 @@
 				206D67651EE10198004CFA50 /* YYPUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		20BE731C1EE52B32008D92C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20BE731D1EE52B8E008D92C5 /* SchoolModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		538287DA25A6CE2DA5224AF4 /* Pods */ = {
@@ -362,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				206D67661EE10198004CFA50 /* YYPUtils.swift in Sources */,
+				20BE731E1EE52B8E008D92C5 /* SchoolModel.swift in Sources */,
 				20597E5C1EE00058003C7155 /* YYPTabbarController.swift in Sources */,
 				20597E581EDFFDE4003C7155 /* YYPOrderClassVC.swift in Sources */,
 				206D67691EE139CC004CFA50 /* YYPRequestManager.swift in Sources */,
