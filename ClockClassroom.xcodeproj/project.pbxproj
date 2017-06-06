@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200DF1011EE69C4100CBC04E /* YYPOrderClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200DF1001EE69C4100CBC04E /* YYPOrderClassCell.xib */; };
+		200DF1031EE69C7700CBC04E /* YYPOrderClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200DF1021EE69C7700CBC04E /* YYPOrderClassCell.swift */; };
 		20597E291EDFF8F3003C7155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20597E281EDFF8F3003C7155 /* AppDelegate.swift */; };
 		20597E2E1EDFF8F3003C7155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20597E2C1EDFF8F3003C7155 /* Main.storyboard */; };
 		20597E331EDFF8F3003C7155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20597E311EDFF8F3003C7155 /* LaunchScreen.storyboard */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		1335A6EBA7C8F1EBB3684792 /* Pods-ClockClassroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClockClassroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClockClassroom/Pods-ClockClassroom.release.xcconfig"; sourceTree = "<group>"; };
+		200DF1001EE69C4100CBC04E /* YYPOrderClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYPOrderClassCell.xib; sourceTree = "<group>"; };
+		200DF1021EE69C7700CBC04E /* YYPOrderClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPOrderClassCell.swift; sourceTree = "<group>"; };
 		20597E251EDFF8F3003C7155 /* ClockClassroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockClassroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20597E281EDFF8F3003C7155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20597E2D1EDFF8F3003C7155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				20597E571EDFFDE4003C7155 /* YYPOrderClassVC.swift */,
+				200DF1021EE69C7700CBC04E /* YYPOrderClassCell.swift */,
+				200DF1001EE69C4100CBC04E /* YYPOrderClassCell.xib */,
 			);
 			name = OrderClass;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			files = (
 				20597E5A1EDFFFA6003C7155 /* Images.xcassets in Resources */,
 				20597E331EDFF8F3003C7155 /* LaunchScreen.storyboard in Resources */,
+				200DF1011EE69C4100CBC04E /* YYPOrderClassCell.xib in Resources */,
 				20597E2E1EDFF8F3003C7155 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				206D67661EE10198004CFA50 /* YYPUtils.swift in Sources */,
+				200DF1031EE69C7700CBC04E /* YYPOrderClassCell.swift in Sources */,
 				20BE731E1EE52B8E008D92C5 /* SchoolModel.swift in Sources */,
 				20597E5C1EE00058003C7155 /* YYPTabbarController.swift in Sources */,
 				20597E581EDFFDE4003C7155 /* YYPOrderClassVC.swift in Sources */,

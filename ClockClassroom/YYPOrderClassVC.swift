@@ -18,10 +18,13 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         self.navigationController?.navigationBar.isHidden = true
         
-        tableView.frame = CGRect(x:0 , y: 0, width:kScreenWidth , height: kScreenHeight)
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view.addSubview(tableView)
+        self.tableView.frame = CGRect(x:0 , y: 0, width:kScreenWidth , height: kScreenHeight)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = 80
+        self.view.addSubview(self.tableView)
+        self.tableView.register(UINib(nibName: "YYPOrderClassCell", bundle: nil), forCellReuseIdentifier: "orderclasscell")
+
         
         let urlString = "\(JavaUrl)/dubboServiceConsumer/v2.6/school/findSchool.action"
         let dict = ["is_ios":"1","is_test":"1"]
@@ -30,10 +33,7 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
 //            print("------------\(result)")
             let schools = result["obj"]?["flagship"]
             self.schoolArray =  Mapper<SchoolModel>().mapArray(JSONArray: schools as! [[String : Any]])!
-            
-            let model = self.schoolArray[0] as! SchoolModel
-            
-            print(model.address as Any)
+            self.tableView.reloadData()
             
         }) { (Error) in
             print("====\(Error)")
@@ -42,20 +42,25 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.schoolArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellid = "cellid"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellid)
-        if (cell == nil) {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellid)
-        }
-        return cell!
+        
+        let cellid = "orderclasscell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellid) as! YYPOrderClassCell
+        
+        let model = self.schoolArray[indexPath.row] as! SchoolModel
+        cell.resetCellWith(model: model)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
