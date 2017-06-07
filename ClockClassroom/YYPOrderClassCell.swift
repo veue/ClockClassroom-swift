@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+
 class YYPOrderClassCell: UITableViewCell {
 
     @IBOutlet weak var tipsImageView: UIImageView!
@@ -20,6 +21,9 @@ class YYPOrderClassCell: UITableViewCell {
     @IBOutlet weak var willReserveLAbel: UILabel!
     @IBOutlet weak var nameLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var cover: UIView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -12,18 +12,30 @@ import Foundation
 let kScreenWidth = UIScreen.main.bounds.width
 let kScreenHeight = UIScreen.main.bounds.height
 
-func x(object : UIView) -> CGFloat {
-    return object.frame.origin.x
+extension UIView {
+    public func x() -> CGFloat {
+        return self.frame.origin.x
+    }
+    public func y() -> CGFloat {
+        return self.frame.origin.y
+    }
+    public func width() -> CGFloat {
+        return self.bounds.width
+    }
+    public func height() -> CGFloat {
+        return self.bounds.height
+    }
+    public func right() -> CGFloat {
+        return self.frame.origin.x + self.bounds.width
+    }
+    public func bottom() -> CGFloat {
+        return self.frame.origin.y + self.bounds.height
+    }
 }
 
-func y(object : UIView) -> CGFloat {
-    return object.frame.origin.y
-}
 
-func width(object : UIView) -> CGFloat {
-    return object.bounds.width
-}
 
-func height(object : UIView) -> CGFloat {
-    return object.bounds.height
-}
+
+
+
+
