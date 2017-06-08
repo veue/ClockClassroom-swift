@@ -31,6 +31,13 @@ extension UIView {
     public func bottom() -> CGFloat {
         return self.frame.origin.y + self.bounds.height
     }
+    public func centerX() -> CGFloat {
+        return self.center.x
+    }
+    public func centerY() -> CGFloat {
+        return self.center.y
+    }
+
 }
 
 

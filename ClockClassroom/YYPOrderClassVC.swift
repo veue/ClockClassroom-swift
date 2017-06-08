@@ -8,8 +8,9 @@
 
 import UIKit
 import ObjectMapper
+import NVActivityIndicatorView
 
-class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
+class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,NVActivityIndicatorViewable {
     let tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
     var schoolArray = Array<Any>()
     var headerSchoolArray = Array<Any>()
@@ -36,17 +37,22 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     func loadData() -> Void {
         
+        let indicatView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 20, y: self.view.center.y, width: 40, height: 40), type: .lineSpinFadeLoader, color: UIColor.green, padding: 0)
+        self.view.addSubview(indicatView)
+        indicatView.startAnimating()
+        
         let urlString = "\(JavaUrl)/dubboServiceConsumer/v2.6/school/findSchool.action"
         let dict = ["is_ios":"1","is_test":"1"]
         
         YYPRequestManager.sharedInstance.postRequest(urlString: urlString, parameters:dict, success: { (result) in
-            
+            indicatView.stopAnimating()
             let schools = result["obj"]?["flagship"]
             self.schoolArray =  Mapper<SchoolModel>().mapArray(JSONArray: schools as! [[String : Any]])!
             self.configTableViewHeader()
             self.tableView.reloadData()
             
         }) { (Error) in
+            indicatView.stopAnimating()
             print("====\(Error)")
         }
     }
@@ -63,6 +69,7 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth*10.0/16.0))
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
         scrollView.contentSize = CGSize(width: kScreenWidth * CGFloat(self.headerSchoolArray.count), height: kScreenWidth*10.0/16.0)
         scrollView.contentOffset = CGPoint(x: kScreenWidth, y: 0)
         bgView.addSubview(scrollView)
@@ -72,6 +79,12 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
             imageView.kf.setImage(with: URL.init(string: model.pic_big!))
             scrollView.addSubview(imageView)
         }
+        
+        let pageControl = UIPageControl.init(frame: CGRect(x: bgView.centerX() - 40, y: scrollView.bottom() - 20, width: 80, height: 20))
+        pageControl.tag = 103
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = self.schoolArray.count
+        bgView.addSubview(pageControl)
         
         let model = self.headerSchoolArray[1] as! SchoolModel
         
@@ -155,5 +168,12 @@ class YYPOrderClassVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         label = self.tableView.tableHeaderView?.viewWithTag(102) as! UILabel
         label.text = model.tags
+        
+        
+        let pageControl = self.tableView.tableHeaderView?.viewWithTag(103) as! UIPageControl
+        pageControl.currentPage = Int(index - 1)
+        
+        print(index)
+        
     }
 }
