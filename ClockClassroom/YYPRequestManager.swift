@@ -15,6 +15,10 @@ let H5BaseUrl = "http://api.51shizhong.com"
 let BasePicUrl = "http://i.upload.file.dc.cric.com/"
 let JavaUrl = "https://api2.51shizhong.com"
 
+let KVersion = "api_v9"
+let KVersionH = "h5_v12"
+let CCAppVersion = "v2.6"
+
 private let YYPRequestShareInstance = YYPRequestManager()
 
 class YYPRequestManager: NSObject {
